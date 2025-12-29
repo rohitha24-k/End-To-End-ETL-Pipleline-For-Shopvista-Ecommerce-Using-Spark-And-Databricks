@@ -35,6 +35,7 @@ Raw data is ingested from **Azure Data Lake Storage (ADLS)** into **Azure Databr
 3. Store data in **Delta format**
 4. Apply only basic validations
 5. No business logic or aggregations are applied at this stage
+6. For fact tables, we use Databricks Autoloader for incremental ingestion from ADLS into Delta tables, ensuring efficient, continuous, and schema-compliant loading.
 
 ---
 
