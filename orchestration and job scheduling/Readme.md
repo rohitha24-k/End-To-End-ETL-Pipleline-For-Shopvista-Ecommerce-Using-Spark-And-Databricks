@@ -7,13 +7,13 @@ This layer manages the **end-to-end orchestration and scheduling** of data pipel
 ## 🔗 Overall Pipeline Flow
 
 ADLS
-↓
+->
 Bronze Layer (Ingestion)
-↓
+->
 Silver Layer (Transformation)
-↓
+->
 Gold Layer (BI Ready Tables)
-↓
+->
 Power BI Dashboards
 
 
@@ -27,15 +27,13 @@ Dimension tables are refreshed **daily** to keep reference data up to date.
 
 ### 🔁 Flow
 ADLS
-↓
+->
 Bronze: Raw Dimension Tables
-↓
+->
 Silver: Cleaned & Standardized Dimensions
-↓
+->
 Gold: BI-Optimized Dimensions
 
-yaml
-Copy code
 
 ### ✅ Key Details
 - Connected across **Bronze → Silver → Gold**
@@ -51,11 +49,11 @@ Order data is business-critical and requires **daily freshness**.
 
 ### 🔁 Flow
 ADLS
-↓
+->
 Bronze: Raw Order Items
-↓
+->
 Silver: Incremental UPSERT with Checkpoints
-↓
+->
 Gold: Daily Aggregated Orders
 
 
@@ -66,7 +64,7 @@ Gold: Daily Aggregated Orders
 - Checkpoints ensure fault tolerance and idempotency
 
   Daily refresh dim
-  ↓
+ ->
   Daily refresh fact order items 
 ---
 
@@ -76,11 +74,11 @@ Return data is less volatile and follows a **monthly refresh strategy**.
 
 ### 🔁 Flow
 ADLS
-↓
+->
 Bronze: Raw Returns
-↓
+->
 Silver: Incremental Processing
-↓
+->
 Gold: Monthly Aggregated Returns
 
 
@@ -97,11 +95,11 @@ Shipment data follows the same orchestration logic as returns.
 
 ### 🔁 Flow
 ADLS
-↓
+->
 Bronze: Raw Shipments
-↓
+->
 Silver: Incremental Processing
-↓
+->
 Gold: Monthly Aggregated Shipments
 
 
